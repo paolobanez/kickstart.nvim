@@ -366,6 +366,9 @@ require('lazy').setup({
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
+      vim.keymap.set('n', '<leader>st', function()
+        builtin.find_files { cwd = '~/notes' }
+      end, { desc = '[S]earch [T]odos' })
       vim.keymap.set('n', '<leader>sq', builtin.commands, { desc = '[S]earch [Q]ommands' })
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
       vim.keymap.set('n', '<leader>sc', builtin.git_status, { desc = '[S]earch [C]hanges' })
